@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="csu_china" content="csu_china" />
+        <title>Team:csu_china</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="http://code.jquery.com/jquery-latest.js"></script>   
+        <script src="js/scripts.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="home.html"><img src="./assets/img/logos/nav-01.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse inner-navigation collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0 nav-pills">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Project</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
+                                <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+                                <li class="nav-item"><a class="nav-link" href="report.html">Report</a></li>
+                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Documentation</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="protocols.html">Protocols</a></li>
+                                <li class="nav-item"><a class="nav-link" href="notebook.html">Lab notebook</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Team</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+                                <li class="nav-item"><a class="nav-link" href="attributions.html">Attributions</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" id="msth">
+            <script>
+                var bg_img=["./assets/img/background/team/header-bg1.png","./assets/img/background/team/header-bg2.png"];   
+                document.getElementById("msth").style.backgroundImage="url("+bg_img[Math.floor(Math.random()*(bg_img.length))]+")";  
+            </script>
+            <div class="container">  
+                <div class="masthead-heading text-uppercase">Peplib Generator:</div>
+                <div class="masthead-subheading">In silico directed evolution and de novo generation for peptide drug powered by AlphaFold2</div>
+            </div>
+          </div>
+          <div><img style="width: 35%; position: absolute; right: 8%; top: 15rem;" src="./Team_CSU CHINA - 2020.igem.org_files/T--CSU_CHINA--Home_1_1_logo.png"></div>
+        </div>
+      </div>
+        </header>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Team:CSU_China All Rights Reserved</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+        <!--NAV&TOC JS-->
+        <script>
+            $(document).ready(function(){
+                dropdownOpen();
+            });
+            function dropdownOpen() {
+                var $dropdownLi = $('li.dropdown');
+                $dropdownLi.mouseover(function() {
+                    $(this).addClass('open');
+                }).mouseout(function() {
+                    $(this).removeClass('open');
+            });
+            }
+            (window.onload = function(){
+              createTOC('pagecontent')
+            })
+            function createTOC(elementId){
+             
+              let titles = document.getElementById(elementId).getElementsByClassName('pageContent-main__title')
+              let toc_list = document.getElementById('toclist')
+              while (toc_list.firstChild) {
+                 let oldNode = toc_list.removeChild(toc_list.firstChild);
+                 oldNode = null;
+              }
+              for(let i in titles){
+                let text = titles[i].textContent.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');   
+                titles[i].id=text
+                if(!!text){
+                  console.log(text)
+                  let toc_item = document.createElement('div')
+                  toc_item.setAttribute('class', 'toclist__item')
+                  let link = document.createElement('a')
+                  link.href="#"+text
+                  let t = document.createTextNode(text)
+                  link.appendChild(t)
+                  toc_item.appendChild(link)
+                  toc_list.appendChild(toc_item)
+                }
+              }
+            }
+        </script>
+    </body>
+</html>

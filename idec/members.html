@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="csu_china" content="csu_china" />
+        <title>Team:csu_china</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="http://code.jquery.com/jquery-latest.js"></script>   
+        <script src="js/scripts.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="home.html"><img src="./assets/img/logos/nav-01.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse inner-navigation collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0 nav-pills">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Project</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
+                                <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+                                <li class="nav-item"><a class="nav-link" href="report.html">Report</a></li>
+                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Documentation</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="protocols.html">Protocols</a></li>
+                                <li class="nav-item"><a class="nav-link" href="notebook.html">Lab notebook</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Team</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+                                <li class="nav-item"><a class="nav-link" href="attributions.html">Attributions</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" id="msth">
+            <script>
+                var bg_img=["./assets/img/background/team/header-bg1.png","./assets/img/background/team/header-bg2.png"];   
+                document.getElementById("msth").style.backgroundImage="url("+bg_img[Math.floor(Math.random()*(bg_img.length))]+")";  
+            </script>
+            <div class="container">
+                <div class="masthead-heading text-uppercase">Members</div>
+            </div>
+        </header>
+        <!--Team-->
+        <section class="page-section bg-light">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Insturctor</h2>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-4" id=demo>
+                        <div hidden class="team-member">
+                        </div>
+                    </div>
+                    <div class="col-lg-4" id=demo1>
+                        <div class="team-member">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                <img class="mx-auto rounded-circle" src="./assets/img/team/dsCao-hd.png" alt="..." />
+                            </a>
+                            <h4>Dongsheng Cao</h4>
+                            <p class="text-muted">Insturctor</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" id=demo2>
+                        <div hidden class="team-member">
+                        </div>
+                    </div>
+                </div>
+                <!--div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Hello World</p></div>
+                </div-->
+            </div>
+        </section>
+        <!--Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Team Members</h2>
+                    <!--h3 class="section-subheading text-muted">Hello World</h3-->
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-default btn-lg btn-block col-lg-1" id = lbtn><</button>
+                    <div class="col-lg-3" id=demo>
+                        <div class="team-member">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <img class="mx-auto rounded-circle" id = img1 src="./assets/img/team/yzZhang-hd.png" alt="..." />
+                            </a>
+                            <h4 id = name1>Yanzhe Zhang</h4>
+                            <p class="text-muted" id = job1>Team Leader & Development</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" id=demo1>
+                        <div class="team-member">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <img class="mx-auto rounded-circle" id = img2 src="./assets/img/team/kwLi-hd.png" alt="..." />
+                            </a>
+                            <h4 id = name2>Kaiwen Li</h4>
+                            <p class="text-muted" id = job2>Development</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" id=demo2>
+                        <div class="team-member">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <img class="mx-auto rounded-circle" id = img3 src="./assets/img/team/swLi-hd.png" alt="..." />
+                            </a>
+                            <h4 id = name3>Shuwen Li</h4>
+                            <p class="text-muted" id = job3>Development & Front End</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default btn-lg btn-block col-lg-1" id = rbtn>></button> 
+                </div>
+               
+            </div>
+        </section>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase" id=fname1>Yanzhe Zhang</h2>
+                                    <p class="item-intro text-muted" id=fjob1>Team Leader & Development</p>
+                                    <img class="mx-auto" id=fimg1 width="425" height="425" src="./assets/img/team/yzZhang-hf.png" alt="..." />
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Major:</strong>
+                                            <p id=mj1> Bioinformatics, Central South University(Computational Structural Biology, Westlake University)</p>
+                                        </li>
+                                        <li>
+                                            <strong>Fun fact:</strong>
+                                            <p id=ff1>AIDD/CADD Developer, Protein Designer, Electronics Hobbyist, Amateur Astronomer</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase" id=fname2>Kaiwen Li</h2>
+                                    <p class="item-intro text-muted" id=fjob2>Development</p>
+                                    <img class="mx-auto" id=fimg2 width="425" height="425" src="./assets/img/team/kwLi-hf.png"alt="..." />
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Major:</strong>
+                                            <p id=mj2>null</p>
+                                        </li>
+                                        <li>
+                                            <strong>Fun fact:</strong>
+                                            <p id=ff2>null</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase" id=fname3>Shuwen Li</h2>
+                                    <p class="item-intro text-muted" id=fjob3>Development & Front End</p>
+                                    <img class="mx-auto" id=fimg3 width="425" height="425" src="./assets/img/team/swLi-hf.png" alt="..." />
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Major:</strong>
+                                            <p id=mj3>Department of Boinformatic, Life Science College, Central South University</p>
+                                        </li>
+                                        <li>
+                                            <strong>Fun fact:</strong>
+                                            <p id=ff3>null</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase" id=name33>Dongsheng Cao</h2>
+                                    <p class="item-intro text-muted" id=fjob3>advisor</p>
+                                    <img class="mx-auto" id=fimg3 width="425" height="425" src="./assets/img/team/dsCao-hf.png" alt="..." />
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Personal profile:</strong>
+                                            <p id=mj3>Professor, Xiangya School of pharmacy, Central South University. His research interests include chemical informatics, 
+                                                computer-aided drug design and systems biology. He is mainly engaged in the research on new methods and applications of efficient 
+                                                chemical informatics and drug design based on artificial intelligence technology.12 papers won ESI 1% high cited or expanded high cited papers</p>
+                                        </li>
+                                        <li>
+                                            <strong>Position:</strong>
+                                            <p id=ff3>Central south university, professor of school of pharmacy</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Team:CSU_China All Rights Reserved</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>
+            $(document).ready(function(){
+                dropdownOpen();
+            });
+            function dropdownOpen() {
+                var $dropdownLi = $('li.dropdown');
+                $dropdownLi.mouseover(function() {
+                    $(this).addClass('open');
+                }).mouseout(function() {
+                    $(this).removeClass('open');
+                });
+            }
+            var lStep = 0; var mStep = 1; var rStep = 2;
+            var imgList = ['./assets/img/team/yzZhang-hd.png', './assets/img/team/kwLi-hd.png', './assets/img/team/swLi-hd.png', './assets/img/team/wqZhu-hd.png', './assets/img/team/ylWan-hd.png', 
+                           './assets/img/team/Qhe-hd.png', './assets/img/team/jyYi-hd.png', './assets/img/team/syZheng-hd.png', './assets/img/team/jbLiao-hd.png', './assets/img/team/syLiu-hd.png'];
+            var imgList1 = ['./assets/img/team/yzZhang-hd.png', './assets/img/team/kwLi-hf.png', './assets/img/team/swLi-hf.png', './assets/img/team/wqZhu-hf.png', './assets/img/team/ylWan-hf.png', 
+                           './assets/img/team/Qhe-hf.png', './assets/img/team/jyYi-hf.png', './assets/img/team/syZheng-hf.png', './assets/img/team/jbLiao-hf.png', './assets/img/team/syLiu-hf.png'];
+            var nameList = ['Yanzhe Zhang', 'Kaiwen Li', 'Shuwen Li', 'Wanqing Zhu', 'Yinglu Wan', 'Qiong He', 'Jianyong Yi', 'Siyue Zheng', 'Junbo Liao', 'Shiyu Liu'];
+            var jobList = ['Team Leader & Development', 'Development' , 'Development & Front End', 'Report writing & Program managing', 'Report writing & Program managing', 
+                           'Module Development', 'Module Development', 'null', 'Financial management & Report writing', 'Creative design & Program managing'];
+            var majList = ['Bioinformatics, Central South University(Computational Structural Biology, Westlake University)', 'null',
+                           'Department of Boinformatic, Life Science College, Central South University', 'Department of Clinical Medicine, Xiangya Medical College, Central South University', 
+                           'Department of Clinical Medicine, Xiangya School of Medicine, Central South University', 'Department of Boinformatic, Life Science College, Central South University',
+                           'Department of Boinformatic, Life Science College, Central South University', 'null',
+                           'Department of Clinical Medicine, Xiangya School of Medicine, Central South University','Department of Clinical Medicine, Xiangya School of Medicine, Central South University']
+            var ffList = ['AIDD/CADD Developer, Protein Designer, Electronics Hobbyist, Amateur Astronomer', 'null',
+                          'null', 'She likes to speak Chinese idioms, but often uses on the wrong occasions.',
+                          'In rainy days, she can always step into puddles accurately.', 'Wanna do computational neuroscience&Ai votarist.', 
+                          'Digital medicine for precision medicine', 'null', 
+                          'A paper writer surrounding by endless ddl.', 'With her, no one will be noticed by mosquitoes.']
+
+            var tt = ['', ];
+
+            var fb = [];
+
+            var li = [];
+
+            var oImg1 = document.getElementById('img1'); var oJob1 = document.getElementById('job1'); var oName1 = document.getElementById('name1'); var oMj1 =  document.getElementById('mj1'); 
+            var oFf1 =  document.getElementById('ff1'); var oImg11 = document.getElementById('fimg1'); var oFname1 = document.getElementById('fname1'); var oFjob1 = document.getElementById('fjob1');
+
+            var oImg2 = document.getElementById('img2'); var oJob2 = document.getElementById('job2'); var oName2 = document.getElementById('name2'); var oMj2 =  document.getElementById('mj2'); 
+            var oFf2 =  document.getElementById('ff2'); var oImg22 = document.getElementById('fimg2'); var oFname2 = document.getElementById('fname2'); var oFjob2 = document.getElementById('fjob2');
+
+            var oImg3 = document.getElementById('img3'); var oJob3 = document.getElementById('job3'); var oName3 = document.getElementById('name3'); var oMj3 =  document.getElementById('mj3');
+            var oFf3 =  document.getElementById('ff3'); var oImg33 = document.getElementById('fimg3'); var oFname3 = document.getElementById('fname3'); var oFjob3 = document.getElementById('fjob3');
+
+            var lBtn = document.getElementById('lbtn'); var rBtn = document.getElementById('rbtn');
+
+            lBtn.onclick = function(){
+                lStep --; mStep --; rStep --;
+                if(lStep < 0) lStep += 10; if(lStep >= 10) lStep -= 10;
+                if(mStep < 0) mStep += 10; if(mStep >= 10) mStep -= 10;
+                if(rStep < 0) rStep += 10; if(rStep >= 10) rStep -= 10;
+                oImg1.src = imgList[lStep]; oJob1.innerHTML = jobList[lStep]; oName1.innerHTML = nameList[lStep]; oMj1.innerHTML = majList[lStep]; oFf1.innerHTML = ffList[lStep]; 
+                oImg11.src = imgList1[lStep]; oFjob1.innerHTML = jobList[lStep]; oFname1.innerHTML = nameList[lStep];
+
+                oImg2.src = imgList[mStep]; oJob2.innerHTML = jobList[mStep]; oName2.innerHTML = nameList[mStep]; oMj2.innerHTML = majList[mStep]; oFf2.innerHTML = ffList[mStep]; 
+                oImg22.src = imgList1[mStep]; oFjob2.innerHTML = jobList[mStep]; oFname2.innerHTML = nameList[mStep];
+
+                oImg3.src = imgList[rStep]; oJob3.innerHTML = jobList[rStep]; oName3.innerHTML = nameList[rStep]; oMj3.innerHTML = majList[rStep]; oFf3.innerHTML = ffList[rStep]; 
+                oImg33.src = imgList1[rStep]; oFjob3.innerHTML = jobList[rStep]; oFname3.innerHTML = nameList[rStep]; 
+            }
+            rBtn.onclick = function(){
+                lStep ++; mStep ++; rStep ++;
+                if(lStep < 0) lStep += 10; if(lStep >= 10) lStep -= 10;
+                if(mStep < 0) mStep += 10; if(mStep >= 10) mStep -= 10;
+                if(rStep < 0) rStep += 10; if(rStep >= 10) rStep -= 10;
+                oImg1.src = imgList[lStep]; oJob1.innerHTML = jobList[lStep]; oName1.innerHTML = nameList[lStep]; oMj1.innerHTML = majList[lStep]; oFf1.innerHTML = ffList[lStep]; 
+                oImg11.src = imgList1[lStep]; oFjob1.innerHTML = jobList[lStep]; oFname1.innerHTML = nameList[lStep];
+
+                oImg2.src = imgList[mStep]; oJob2.innerHTML = jobList[mStep]; oName2.innerHTML = nameList[mStep]; oMj2.innerHTML = majList[mStep]; oFf2.innerHTML = ffList[mStep]; 
+                oImg22.src = imgList1[mStep]; oFjob2.innerHTML = jobList[mStep]; oFname2.innerHTML = nameList[mStep];
+
+                oImg3.src = imgList[rStep]; oJob3.innerHTML = jobList[rStep]; oName3.innerHTML = nameList[rStep]; oMj3.innerHTML = majList[rStep]; oFf3.innerHTML = ffList[rStep]; 
+                oImg33.src = imgList1[rStep]; oFjob3.innerHTML = jobList[rStep]; oFname3.innerHTML = nameList[rStep]; 
+            }
+        </script>
+    </body>
+</html>
