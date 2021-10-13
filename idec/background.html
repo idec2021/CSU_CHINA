@@ -39,14 +39,14 @@
                             <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Documentation</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="protocols.html">Protocols</a></li>
-                                <li class="nav-item"><a class="nav-link" href="notebook.html">Lab notebook</a></li>
+                                <li class="nav-item"><a class="nav-link" href="notebook.html">Lab notebook</a></li> 
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Team</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
-                                <li class="nav-item"><a class="nav-link" href="attributions.html">Attributions</a></li>
+                                <!-- <li class="nav-item"><a class="nav-link" href="attributions.html">Attributions</a></li> -->
                             </ul>
                         </li>
                     </ul>
@@ -56,7 +56,7 @@
         <!-- Masthead-->
         <header class="masthead" id="msth">
             <script>
-                var bg_img=["./assets/img/background/team/header-bg1.png","./assets/img/background/team/header-bg2.png"];   
+                var bg_img=["./assets/img/background/background/header-bg1.png","./assets/img/background/background/header-bg2.png"];   
                 document.getElementById("msth").style.backgroundImage="url("+bg_img[Math.floor(Math.random()*(bg_img.length))]+")";  
             </script>
             <div class="container">
@@ -84,12 +84,13 @@
                         </p>
                     </div>
                     <h2 class="pageContent-main__title pageContent-main__subtitle">
-                        Introduction
+                        Technology Break Through
                     </h2>
                     <div class="pageContent-main__textBox">
                         <p>
-                            The recent release of Alphafold2[1] by DeepMind, 
-                            however, brings some new insight into these longlasting complicated problems. Inspired by its power 
+                            The recent release of Alphafold2 by DeepMind, 
+                            however, brings some new insight into these long
+                            lasting complicated problems. Inspired by its power 
                             to predict protein structures efficiently and 
                             accurately, we combined protein-peptide complex 
                             structure prediction and in silico directed evolution
@@ -97,6 +98,12 @@
                             generate optimized peptide ligands from target 
                             protein information in one step.
                         </p>
+                        <img class="image" src="./assets/img/resource/result1.png">
+                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 3. Convergence curve of binder optimization</p>
+                        <p>Fitness of raw sequence and optimized referenced sequence 
+                            are counted in Gradient Network (the lower the better), so is the last 
+                            best sequence optimized by Peplib Generator.
+                        </p>    
                     </div>
                 </div>
                 <div class="pageContent-side" style="padding-top: 4rem;">
