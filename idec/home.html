@@ -13,15 +13,17 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
         <script src="http://code.jquery.com/jquery-latest.js"></script>   
-        <script src="   js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
         <script src="js/script.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="home.html"><img src="./assets/img/logos/nav-01.png" alt="..." /></a>
+                <a class="navbar-brand" href="home.html"><img src="./assets/img/logos/nav-02.png" width=30px alt="..." /></a>
+                <a class="teamname" href="home.html"><p>CSU CHINA</p></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -53,65 +55,27 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead" id="msth">
-            <script>
-                var bg_img=["./assets/img/background/home/header-bg1.png","./assets/img/background/home/header-bg2.png"];   
-                document.getElementById("msth").style.backgroundImage="url("+bg_img[Math.floor(Math.random()*(bg_img.length))]+")";  
-            </script>
-            <div class="container">  
-                <div class="masthead-heading text-uppercase">Peplib Generator</div>
-                <div class="masthead-subheading">In silico directed evolution and de novo generation for peptide drug powered by AlphaFold2</div>
-            </div>
-        </header>
         <!-- Content-->
         <div class="MainPage" id="MainPage">
             <div class="content-home" id="home">
-                <div class="screen" style="background: linear-gradient(var(--primary), #b044c5)">
-                    <div class="group active" id="group1">
-                      <div class="title">
-                        <div style="border-top: 3px rgb(115, 33, 136) dashed; border-bottom: 3px rgb(114, 16, 128) dashed; padding: 1rem 0;margin-bottom: 1rem;">
-                          What we do
-                          <p>
-                            Peplib Generator generates de novo peptide hits library from given target information alone
-                          </p>
-                        </div>
-                        <span style="font-size: 3rem;">
-                        CSU_CHINA</br>
-                        2020
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                <div class="screen" style="background: linear-gradient(var(--primary), #8ca3ac)">
-                    <div class="group active" id="group1">
-                      <div class="title">
-                        <div style="border-top: 3px rgb(115, 33, 136) dashed; border-bottom: 3px rgb(114, 16, 128) dashed; padding: 1rem 0;margin-bottom: 1rem;">
-                          Clean<br>
-                          the Contamination<br>
-                               of Cadmium
-                        </div>
-                        <span style="font-size: 3rem;">
-                        CSU_CHINA</br>
-                        2020
-                        </span>
-                      </div>
+                <div class="cloth"></div>
+                <div class="screen">
+                    <div class="textbox">
+                        <h1 class="textbox_title">para1</h1>
+                        <p class="textbox_text">first</p>
                     </div>
                 </div>
-                <div class="screen" style="background-image:url('https://2020.igem.org/wiki/images/d/db/T--CSU_CHINA--Home_2_1_banner.svg');background-position: center; background-size: cover;">
-                    <div class="group" id="group2" style="position: relative" >
-                      <div style="flex-shrink: 0; flex: 1; padding: 3rem;">
-                      </div>
-                      <div class="content right">
-                        <div class="content-title">
-                          <div class="content-title__number">1</div>
-                          <div class="content-title__text">Environmental protection</br>high efficiency and tolerance</div>
-                        </div>
-                        <div class="content-description">Most sewage plants are suitable for treating cadmium ions by physicochemical sedimentation. Still, it is easy to cause secondary pollution. For environmental principles, we used the synthetic biology method to redesign Synechocystis sp. PCC6803. It will effectively reduce the cadmium content after being put into the wastewater，and has high cadmium tolerance to be used for a long time.</div>
-                      </div>
+                <div class="screen">
+                    <div class="textbox">
+                        <h1 class="textbox_title">para1</h1>
+                        <p class="textbox_text">first</p>
                     </div>
-                    <!-- <div style="position: absolute; transition: all 1s; bottom: 2rem; right: 7%;"><img style="width: 200px; height: 100px;" src="https://2020.igem.org/wiki/images/f/f4/T--CSU_CHINA--Home_3_1_boat.png"></div> -->
-                    <div id="boat" style="position: absolute;display:none; transition: all 1s; bottom: 2rem; right: 7%;"><img style="width: 200px; height: 100px;" src="https://2020.igem.org/wiki/images/f/f4/T--CSU_CHINA--Home_3_1_boat.png"></div>
+                </div>
+                <div class="screen">
+                    <div class="textbox">
+                        <h1 class="textbox_title">para1</h1>
+                        <p class="textbox_text">first</p>
+                    </div>
                 </div>
                 <footer class="footer py-4">
                     <div class="container">
@@ -123,8 +87,8 @@
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                             <div class="col-lg-4 text-lg-end">
-                                <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                                <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                                <a class="link-dark text-decoration-none me-3" href="privacy_policy.html">Privacy Policy</a>
+                                <a class="link-dark text-decoration-none" href="term_of_use.html">Terms of Use</a>
                             </div>
                         </div>
                     </div>

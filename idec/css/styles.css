@@ -4004,7 +4004,7 @@ textarea.form-control-lg {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   border-color: #dee2e6 #dee2e6 #fff;
 }
 .nav-tabs .dropdown-menu {
@@ -4020,7 +4020,7 @@ textarea.form-control-lg {
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: #fff;
+  color: rgb(255, 255, 255);
   background-color: #ffc800;
 }
 
@@ -4071,12 +4071,10 @@ textarea.form-control-lg {
   justify-content: space-between;
 }
 .navbar-brand {
-  padding-top: 0.3125rem;
+  padding-top: 0.1125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  text-decoration: none;
-  white-space: nowrap;
+  margin-right: 0.3rem;
+  size:100px;
 }
 .navbar-nav {
   display: flex;
@@ -7426,6 +7424,7 @@ textarea.form-control-lg {
 }
 
 .text-uppercase {
+  color:rgba(88, 54, 84, 0.9);
   text-transform: uppercase !important;
 }
 
@@ -11035,12 +11034,18 @@ p {
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
-  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  -webkit-text-stroke-color:  rgb(117, 13, 117); 
+  -webkit-text-stroke-width: .75px;
+  background:-webkit-linear-gradient(bottom, rgb(68, 9, 128), rgb(0, 0, 0), rgb(117, 13, 117));
+  -webkit-background-clip: text;
+	/*-webkit-text-stroke: 1px #000;*/
+	/*-webkit-text-fill-color: transparent;*/
   letter-spacing: 0.0625em;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ffc800;
+  color: #3b2c63;
 }
 
 @media (min-width: 992px) {
@@ -11062,7 +11067,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #212529;
+    background-color: rgba(103, 47, 175, 0.4);
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -11545,14 +11550,14 @@ header.masthead .masthead-heading {
 .pageContent-side .mytoc{
   position: -webkit-sticky;
   position: sticky;
-  top: 30%;
+  top: 10%;
   right: 30%;
   background: transparent;
   padding:1rem;
   border: none;
 }
 .pageContent-side .mytoc .toc_list{
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #888;
   line-height: 1.5rem;
 }
@@ -11588,4 +11593,21 @@ header.masthead .masthead-heading {
   #home>.pageContent>.pageContent-main>.profilelist>.profile {
     width: calc(100% / 3)
   }
+}
+
+.teamname {
+  text-decoration: none;  
+  padding-top: 1.2%;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.7rem;
+  font-weight: bold;
+  background:-webkit-linear-gradient(bottom, rgb(99, 143, 179), rgb(162, 143, 187), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+	/*-webkit-text-stroke: 1px #000;*/
+	-webkit-text-fill-color: transparent;
+  letter-spacing: 0.0625em;
+}
+
+a:link,a:visited{
+  text-decoration: none;
 }

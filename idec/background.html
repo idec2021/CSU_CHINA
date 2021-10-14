@@ -17,16 +17,12 @@
         <script src="js/scripts.js"></script>
         <script src="js/script.js"></script>
     </head>
-    <style>
-        body {
-            background-color: #b64dce;
-        }
-    </style>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="home.html"><img src="./assets/img/logos/nav-01.png" alt="..." /></a>
+                <a class="navbar-brand" href="home.html"><img src="./assets/img/logos/nav-02.png" alt="..." /></a>
+                <a class="teamname" href="home.html"><p>CSU CHINA</p></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -89,7 +85,7 @@
                             computation processes.
                         </p>
                         <img class="image" src="./assets/img/resource/background1.png">
-                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 1. The traditional drug discovery process</p>
+                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: #888;">Figure 1. The traditional drug discovery process</p>
                     </div>
                     <h2 class="pageContent-main__title pageContent-main__subtitle">
                         Technology Break Through
@@ -107,7 +103,7 @@
                             protein information in one step.
                         </p>
                         <img class="image" src="./assets/img/resource/result1.png">
-                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 3. Convergence curve of binder optimization</p>
+                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: #888;">Figure 3. Convergence curve of binder optimization</p>
                         <p>Fitness of raw sequence and optimized referenced sequence 
                             are counted in Gradient Network (the lower the better), so is the last 
                             best sequence optimized by Peplib Generator.
@@ -132,8 +128,8 @@
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                        <a class="link-dark text-decoration-none me-3" href="privacy_policy.html">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="term_of_use.html">Terms of Use</a>
                     </div>
                 </div>
             </div>
@@ -156,28 +152,31 @@
             })
             function createTOC(elementId){
              
-              let titles = document.getElementById(elementId).getElementsByClassName('pageContent-main__title')
-              let toc_list = document.getElementById('toclist')
-              while (toc_list.firstChild) {
-                 let oldNode = toc_list.removeChild(toc_list.firstChild);
-                 oldNode = null;
-              }
-              for(let i in titles){
-                let text = titles[i].textContent.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');   
-                titles[i].id=text
-                if(!!text){
-                  console.log(text)
-                  let toc_item = document.createElement('div')
-                  toc_item.setAttribute('class', 'toclist__item')
-                  let link = document.createElement('a')
-                  link.href="#"+text
-                  let t = document.createTextNode(text)
-                  link.appendChild(t)
-                  toc_item.appendChild(link)
-                  toc_list.appendChild(toc_item)
-                }
-              }
-            }
+             let titles = document.getElementById(elementId).getElementsByClassName('pageContent-main__title')
+             let toc_list = document.getElementById('toclist')
+             while (toc_list.firstChild) {
+                let oldNode = toc_list.removeChild(toc_list.firstChild);
+                oldNode = null;
+             }
+             for(let i in titles){
+               let text = titles[i].textContent.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');  
+               if(titles[i].className!='pageContent-main__title'){
+                   text="　　"+text;
+               }
+               titles[i].id=text
+               if(!!text){
+                 console.log(text)
+                 let toc_item = document.createElement('div')
+                 toc_item.setAttribute('class', 'toclist__item')
+                 let link = document.createElement('a')
+                 link.href="#"+text
+                 let t = document.createTextNode(text)
+                 link.appendChild(t)
+                 toc_item.appendChild(link)
+                 toc_list.appendChild(toc_item)
+               }
+             }
+           }
         </script>
     </body>
 </html>
