@@ -17,6 +17,11 @@
         <script src="js/scripts.js"></script>
         <script src="js/script.js"></script>
     </head>
+    <style>
+        body {
+            background-color: #b64dce;
+        }
+    </style>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -32,8 +37,9 @@
                             <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Project</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
-                                <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
-                                <li class="nav-item"><a class="nav-link" href="report.html">Report</a></li>
+                                <li class="nav-item"><a class="nav-link" href="https://arxiv.idec.io/pdf/a000004.01.pdf">Supplementary</a></li>
+                                <li class="nav-item"><a class="nav-link" href="model.html">Model</a></li>
+                                <li class="nav-item"><a class="nav-link" href="https://arxiv.idec.io/article/000004/">Report</a></li>
                             </ul>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Documentation</a>
@@ -56,11 +62,11 @@
         <!-- Masthead-->
         <header class="masthead" id="msth">
             <script>
-                var bg_img=["./assets/img/background/results/header-bg1.png","./assets/img/background/results/header-bg2.png"];   
+                var bg_img=["./assets/img/background/report/header-bg1.png","./assets/img/background/report/header-bg2.png"];   
                 document.getElementById("msth").style.backgroundImage="url("+bg_img[Math.floor(Math.random()*(bg_img.length))]+")";  
             </script>
             <div class="container">
-                <div class="masthead-heading text-uppercase">Results</div>
+                <div class="masthead-heading text-uppercase">Model</div>
             </div>
         </header>
         <!--content-->
@@ -69,91 +75,19 @@
                 <div class="pageContent-side" style="opacity: 0;"></div>
                 <div class="pageContent-main" id="pagecontent">
                     <h2 class="pageContent-main__title">
-                        Result
+                        <a href="https://arxiv.idec.io/article/000004/">Report</a>
                     </h2>
                     <div class="pageContent-main__textBox">
                         <p>
-                            To show the feasibility of Peplib Generator, we take 
-                            Chain A of Fibroblast growth factor receptor 24
-                            as an example target to find anti-fibrosis peptide drug. 
-                            The whole pipeline is displayed in Fig.2.
-                            Whole work can be done with Nvidia Tesla P100 in 
-                            only 9 hours. Using a more powerful GPU like 
-                            Nvidia A100 can cut hours of computation to 4.
+                            
                         </p>
                     </div>
                     <h2 class="pageContent-main__title pageContent-main__subtitle">
-                        Motif Search
+                        <a href="https://arxiv.idec.io/pdf/a000004.01.pdf">Supplementary</a>
                     </h2>
                     <div class="pageContent-main__textBox">
                         <p>
-                            Motifs are strings of continuous amino acids (usually 
-                            7-16 aa). 
-                            Evolving from entirely random amino acids into a 
-                            stable binder is unlikely to be done. Therefore, 
-                            several motifs are generated in the pocket as seeds
-                            for the peptide.
-                            4 PDB ID: FGFR2
-                            Motifs are expected to be placed in hydrophobic 
-                            grooves with flat pocket[21] by the algorithm. 
-                            Therefore, protein with a globular shape, hydrophilic
-                            surface or narrow pocket is nearly impossible to get 
-                            any motif.
-                            It takes about 30 iterations (30-40 minutes) to 
-                            generate a stable motif right in the pocket.
-                        </p>
-                    </div>
-                    <h2 class="pageContent-main__title pageContent-main__subtitle">
-                        Motif Growth
-                    </h2>
-                    <div class="pageContent-main__textBox">
-                        <p>
-                            With a motif as a seed as well as a constrain, a stable
-                            binder is more likely to be generated.
-                            To generate de novo structure ligand, amino acids are 
-                            randomly positioned on the rest indexes of binder 
-                            except the fixed motif. Peplib Generator only prevent 
-                            binder from folding into irregular curls.
-                            However, without much gradient to guide evolution , 
-                            sequence space is full of alpha-helixes. Motif growth 
-                            cannot be processed one amino acid by one, for it will 
-                            only result in one long alpha-helix. To avoid that, a 
-                            binder with at least 40-70 amino acids is expected.
-                            Scaffold guided evolution is another way towards 
-                            stable folded binder. Yet it cannot make new 
-                            structure to be find as we believe that each target
-                            awaits its only best partner peptide that cannot be 
-                            simply copied and edited from scaffold library. 
-                            Nevertheless this leads to a faster way as screening 
-                            whole scaffold library and graft it in pockets with 
-                            motif. So we are developing scaffold guided 
-                            binder growth based on computer generated mini 
-                            protein scaffold library from David Baker lab.
-                            It costs about 4-5 hours (the longer the better) to 
-                            generate a raw binder.
-                        </p>
-                    </div>
-                    <h2 class="pageContent-main__title pageContent-main__subtitle">
-                        Binder Optimization
-                    </h2>
-                    <div class="pageContent-main__textBox">
-                        <p>
-                            Site saturation mutagenesis is widely considered as 
-                            best way to enhance peptide ligand affinity and stability. 
-                            However, such processes take up to 2 months in real experiments
-                            , even with the high-throughput yeast surface display. 
-                            Peplib Generator works totally fine in this step as it takes only 
-                            6-hour computation and less than $1 electricity fees. And it even 
-                            got better results than experiment ones in our test, which can be 
-                            displayed in Supplementary. Comparing with unpublished but authorized 
-                            data from Cao, we reappearanced peptide binder sequence evolution 
-                            in Fig.3. 
-                        </p>
-                        <img class="image" src="./assets/img/resource/result1.png">
-                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 3. Convergence curve of binder optimization</p>
-                        <p>Fitness of raw sequence and optimized referenced sequence 
-                            are counted in Gradient Network (the lower the better), so is the last 
-                            best sequence optimized by Peplib Generator.
+
                         </p>
                     </div>
                 </div>
@@ -224,3 +158,4 @@
         </script>
     </body>
 </html>
+
