@@ -17,12 +17,17 @@
         <script src="js/scripts.js"></script>
         <script src="js/script.js"></script>
     </head>
+    <style>
+        body {
+            background-color: #b64dce;
+        }
+    </style>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="home.html"><img src="./assets/img/logos/nav-02.png" alt="..." /></a>
-                <a class="teamname" href="home.html"><p>CSU CHINA</p></a>
+                <a class="teamname" href="home.html"><p>CSU_CHINA</p></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -71,43 +76,86 @@
                 <div class="pageContent-side" style="opacity: 0;"></div>
                 <div class="pageContent-main" id="pagecontent">
                     <h2 class="pageContent-main__title">
-                        Background of the project
+                        Process of Drug Discovery 
                     </h2>
                     <div class="pageContent-main__textBox">
                         <p> 
-                            The process from target discovery to drug approval
-                            are always costly and complicated. In recent decade, 
-                            distributed AI models have been widely deployed to 
-                            accelerate the R & D cycle (Research and 
-                            Development Cycle) and reduce costs in multiple 
-                            stages, yet the cost of drug development still 
-                            increases annually resulting from the expensive 
-                            computation processes.
+                            Drug discovery process has been time-consuming for a long time. Starting from target confirmation, 
+                            drug discovery needs to go through a series of work including emerging compound search, generating 
+                            lead compounds, lead compound optimization, and eventually the stage of pre-clinical trials and 
+                            clinical trials. In the past 10 years, the cost of drug research has been increasing annually. Many 
+                            researchers have resorted to in silico strategies to narrow down the ligands and accelerate the process. 
+                            In general, there are two common workflows in computer-assisted drug design: one is to prepare a large 
+                            drug molecule library based on targets, and select by using docking program; the other is to build 
+                            a molecule generator that generates molecules based on target information, screen, and optimize the 
+                            output molecule further base on screening feedback. 
                         </p>
                         <img class="image" src="./assets/img/resource/background1.png">
-                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: #888;">Figure 1. The traditional drug discovery process</p>
+                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 1. Common process of drug discovery</p>
+                        <p>
+                            Peptides are widely found in biological systems and play important roles in signal transduction, such as 
+                            cell division and cell growth. More importantly, some peptide molecules can also be used as antimicrobial 
+                            agents such as broad-spectrum drugs. Different from small-molecule drugs, peptides usually have a shorter 
+                            half-life, stronger binding capacity to target, and weaker membrane penetration capacity. With their sizes 
+                            ranging between sizes of small compounds and large molecules, they can interact with some targets with higher 
+                            binding affinity, thus becoming a great candidate for drug development. Nowadays, peptide drugs accounts for 
+                            about 5% of the global drug market. However, peptide drug discovery differentiates from small-molecule drug 
+                            discovery in certain aspects. Due to the high flexibility of the peptide, the docking simulation of the peptide 
+                            and the target is complex. For example, testing on CABS-dock, blind docking of a target of 279 amino acid 
+                            length with a 9 amino acid peptide takes around 13 hours. On the other hand, for small molecule docking, at 
+                            the scale of 3000 atomic systems, docking using CPU takes usually only 3 seconds. As indicated above, it is 
+                            difficult to screen multiple emerging compounds through large-scale docking. Therefore, we aim to add deep 
+                            learning to the peptide generation and screening model to explore a novel scheme for peptide drug discovery.
+                        </p>
                     </div>
                     <h2 class="pageContent-main__title pageContent-main__subtitle">
-                        Technology Break Through
+                        Common strategies to find hits
                     </h2>
                     <div class="pageContent-main__textBox">
                         <p>
-                            The recent release of Alphafold2 by DeepMind, 
-                            however, brings some new insight into these long
-                            lasting complicated problems. Inspired by its power 
-                            to predict protein structures efficiently and 
-                            accurately, we combined protein-peptide complex 
-                            structure prediction and in silico directed evolution
-                            and developed Peplib Generator, which allowed us to
-                            generate optimized peptide ligands from target 
-                            protein information in one step.
+                            In small-molecule drug discovery, there is a commonly used molecular generation model: the genetic algorithm 
+                            generation model based on the random generation model. There is a general paradigm for such models: characterizer-sampler-scorer, 
+                            often using sequential Generative Adversarial Networks. 
                         </p>
-                        <img class="image" src="./assets/img/resource/result1.png">
-                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: #888;">Figure 3. Convergence curve of binder optimization</p>
-                        <p>Fitness of raw sequence and optimized referenced sequence 
-                            are counted in Gradient Network (the lower the better), so is the last 
-                            best sequence optimized by Peplib Generator.
-                        </p>    
+                        <img class="image" src="./assets/img/resource/background2.png">
+                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 2. Common generative adversarial network framework</p>
+                        <p>
+                            Such models have achieved some good results on new drug discovery for single specific targets, but their 
+                            limitations are also very obvious. They highly rely on training data of a single target and many similar 
+                            ligand molecules for the single target. It does not meet the rising drug discovery demands for new targets.
+                        </p>
+                        <p>
+                            We argue that new models for peptide drug discovery must be developed to overcome the limitations of the previous models as listed:
+                        </p>
+                        <p>
+                            · Good robustness to generate peptides for multiple targets;
+                        </p>
+                        <p>
+                            · Generates multiple species and large quantities of peptide molecules for further screening;
+                        </p>
+                        <p>
+                            · Generate peptides with certain medicinal properties
+                        </p>
+                        <p>
+                            · Ability to accurately predict peptide-protein target affinity.
+                        </p>
+                        <p>
+                            Based on the above analyzed requirements, we developed Peplib Generator based on framework on Fig. 3.
+                        </p>
+                        <img class="image" src="./assets/img/resource/background3.png">
+                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 3. The ligand evolution algorithm framework</p>
+                    </div>
+                    <h2 class="pageContent-main__title pageContent-main__subtitle">
+                        Reference
+                    </h2>
+                    <div class="pageContent-main__textBox">
+                        <p>
+                            [1].Muttenthaler, Markus, et al. "Trends in peptide drug discovery." Nature Reviews Drug Discovery 20.4 (2021): 309-325.
+                        </p>
+                            [2].Kurcinski, Mateusz, et al. "CABS-dock web server for the flexible docking of peptides to proteins without prior knowledge of the binding site." Nucleic acids research 43.W1 (2015): W419-W424.
+                        <p>
+                            [3].Sanchez-Lengeling, Benjamin, et al. "Optimizing distributions over molecular space. An objective-reinforced generative adversarial network for inverse-design chemistry (ORGANIC)." (2017).
+                        </p>
                     </div>
                 </div>
                 <div class="pageContent-side" style="padding-top: 4rem;">
@@ -128,8 +176,8 @@
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="privacy_policy.html">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="term_of_use.html">Terms of Use</a>
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
                     </div>
                 </div>
             </div>
@@ -152,31 +200,28 @@
             })
             function createTOC(elementId){
              
-             let titles = document.getElementById(elementId).getElementsByClassName('pageContent-main__title')
-             let toc_list = document.getElementById('toclist')
-             while (toc_list.firstChild) {
-                let oldNode = toc_list.removeChild(toc_list.firstChild);
-                oldNode = null;
-             }
-             for(let i in titles){
-               let text = titles[i].textContent.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');  
-               if(titles[i].className!='pageContent-main__title'){
-                   text="　　"+text;
-               }
-               titles[i].id=text
-               if(!!text){
-                 console.log(text)
-                 let toc_item = document.createElement('div')
-                 toc_item.setAttribute('class', 'toclist__item')
-                 let link = document.createElement('a')
-                 link.href="#"+text
-                 let t = document.createTextNode(text)
-                 link.appendChild(t)
-                 toc_item.appendChild(link)
-                 toc_list.appendChild(toc_item)
-               }
-             }
-           }
+              let titles = document.getElementById(elementId).getElementsByClassName('pageContent-main__title')
+              let toc_list = document.getElementById('toclist')
+              while (toc_list.firstChild) {
+                 let oldNode = toc_list.removeChild(toc_list.firstChild);
+                 oldNode = null;
+              }
+              for(let i in titles){
+                let text = titles[i].textContent.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');   
+                titles[i].id=text
+                if(!!text){
+                  console.log(text)
+                  let toc_item = document.createElement('div')
+                  toc_item.setAttribute('class', 'toclist__item')
+                  let link = document.createElement('a')
+                  link.href="#"+text
+                  let t = document.createTextNode(text)
+                  link.appendChild(t)
+                  toc_item.appendChild(link)
+                  toc_list.appendChild(toc_item)
+                }
+              }
+            }
         </script>
     </body>
 </html>

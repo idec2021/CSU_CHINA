@@ -17,12 +17,17 @@
         <script src="js/scripts.js"></script>
         <script src="js/script.js"></script>
     </head>
+    <style>
+        body {
+            background-color: #b64dce;
+        }
+    </style>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="home.html"><img src="./assets/img/logos/nav-02.png" alt="..." /></a>
-                <a class="teamname" href="home.html"><p>CSU CHINA</p></a>
+                <a class="teamname" href="home.html"><p>CSU_CHINA</p></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -41,7 +46,7 @@
                             <a class="nav-link dropdown-toggle"data-bs-toggle="dropdown"data-hover="dropdown">Documentation</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="protocols.html">Protocols</a></li>
-                                <li class="nav-item"><a class="nav-link" href="notebook.html">Lab notebook</a></li>
+                                <li class="nav-item"><a class="nav-link" href="notebook.html">Lab notebook</a></li> 
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -58,7 +63,7 @@
         <!-- Masthead-->
         <header class="masthead" id="msth">
             <script>
-                var bg_img=["./assets/img/background/model/header-bg1.png","./assets/img/background/model/header-bg2.png"];   
+                var bg_img=["./assets/img/background/background/header-bg1.png","./assets/img/background/background/header-bg2.png"];   
                 document.getElementById("msth").style.backgroundImage="url("+bg_img[Math.floor(Math.random()*(bg_img.length))]+")";  
             </script>
             <div class="container">
@@ -71,20 +76,267 @@
                 <div class="pageContent-side" style="opacity: 0;"></div>
                 <div class="pageContent-main" id="pagecontent">
                     <h2 class="pageContent-main__title">
-                        <a href="https://arxiv.idec.io/article/000004/">Report</a>
+                        Model 
                     </h2>
                     <div class="pageContent-main__textBox">
                         <p>
-                            
+                            We've iteratively developed 3 version of Peplib Generator, the 1st and 2nd version did't reach our goal, 
+                            and they are displayed in this page. The 3rd version preliminary realized the function of generate peptide hits,
+                             you can read it in <a href="https://arxiv.idec.io/article/000004/">Report</a>.
                         </p>
                     </div>
-                    <h2 class="pageContent-main__title">
-                        <a href="https://arxiv.idec.io/pdf/a000004.01.pdf">Supplementary</a>
-                    </h2>
+                    <h3 class="pageContent-main__title">
+                        Prototype version 1 - ResNet-attention based
+                    </h3>
                     <div class="pageContent-main__textBox">
                         <p>
-
+                            2021.4-2021.7
                         </p>
+                        <p> 
+                             We adopted the following strategies in the first prototype version of the model:
+                        </p>
+                        <p>    
+                            · Train seq2seq for recharacterization of peptide molecules
+                        </p>
+                            · Use particle swarm optimization algorithm to optimize sampling
+                        <p>                         
+                        </p>
+                        <p>    
+                            · Develop multi-head attention-ResNet hybrid model for affinity discrimination
+                        </p>
+                        <p>1. Sampling optimizer:</p>
+                        <p>
+                            Based on the concept of directed evolution, we believe that optimizing sequences can 
+                            be carried out in a virtual environment by sampling sequences and scoring. Besides, 
+                            the evolutionary algorithms similar to genetic algorithms are close to the idea of 
+                            directed evolution. We tested the genetic algorithm and its variants, particle group 
+                            optimization algorithm, Ant Colony Optimization Algorithm, Simulated Annealing, Differential 
+                            Evolution. Using maximum molecular weight as the optimization objective and weighing algorithm 
+                            effect against sampling efficiency, we optimized the Particle Group Optimization algorithm (PSO) 
+                            as a sequence sampler. Since the sampling space requires a fixed-dimensional feature space, 
+                            we developed a characterizer that can transform non-fixed length sequences into fixed length vectors.
+                        </p>
+                        <p>2. Peptide characterizer:</p>
+                        <p>
+                            Protein sequences are usually arranged in FASTA format, but such data are difficult to enter directly 
+                            into binding prediction models. Typically, they are connected to an embedding layer for conversion. 
+                            But for a sampling optimizer, it needs to be done in a fixed dimension. Therefore, sequences of different 
+                            be transformed into FASTA sequences of variable length. Based on the representational requirements described 
+                            above, we obtained 2.52m peptide sequences from <a href="http://www.peptideatlas.org/builds">peptideatlas</a> 
+                            and screened a 1.44 m dataset of amino acids length 5 – 50 to take thermal encoding as training data and trained 
+                            a seq2seq model. This model consists of 2 recurrent neural networks for encoding-decoding. Thus, the fixed 
+                            length vector of the hidden layer can represent any sequence with the limit of 5-50 length .
+                        </p>
+                        <img class="image" src="./assets/img/resource/model1.png">
+                        <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 1. Training of the characterizer</p>
+                        <p>3. Peptide-protein binding predictor:</p>
+                        <p>     (1) Preparation of the training dataset </p>
+                        <p>
+                            We obtained data from the following three databases named <a href="http://bioinfo.dcc.ufmg.br/propedia">propedia</a>, 
+                            <a href="http://huanglab.phys.hust.edu.cn/pepbdb">pepbdb</a> and <a href="http://www.pdbbind-cn.org/download.php">pdbbind</a> 
+                            for about 30k amounts of complex structures. After removing redundant peptides and complex data containing non-natural amino acids, 
+                            we obtained 6,817 complexes, which were used as positive label training data.In order to solve the problem of 
+                            unbalanced labeling of positive and negative data, we separated the peptide and target information, randomly 
+                            combined and filtered the data pairs existing in the positive data set, and took 10% of the training data set 
+                            as negative label data for cross-validation test of training accuracy.
+                        </p>
+                        <p>     (2) Compound characterization</p>
+                        <p>
+                            Since target protein information does not need to participate in evolutionary iteration, it only needs to embed 
+                            target protein information. By calculating the Contact Map of the C-alpha centroid distance of each amino acid, 
+                            in order to avoid pooling caused by excessive single point distance on the image, we discretized the distance 
+                            distribution with 5% truncation and connected it with the thermal coding of the target protein sequence. We used 
+                            ResNet to fully extract the characteristics of the above target proteins. For the peptide ligands, Encoder based 
+                            on seq2seq was used to characterize them.
+                        </p>
+                        <p>     (3) Ligand-target protein classification learning</p>
+                        <p>
+                            After referring to the work of Zheng Mingyue's team in <a href="https://github.com/lifanchen-simm/transformerCPI">transformerCPI</a>, we introduced multiple attention layers 
+                            to avoid the over-fitting phenomenon caused by learning a single target or peptide distribution. The target protein 
+                            information was used as Query, at the same time, the ligand peptide information was used as Key and Value for 
+                            attentional learning.
+                        </p>
+                        <img class="image" src="./assets/img/resource/model2.png">
+                        <p>
+                            Transformer models solve a class of regression tasks. For binary classification model, the mask operation of decoder 
+                            learning needs to be removed so that it always learns information from full target protein and full peptide sequences. 
+                            The attention output was activated by a series of fully connected layers and sigmoid to obtain the 0,1 classification 
+                            result. Binary cross entropy was used as the loss to train the interaction classification model.
+                        </p>
+                        <img class="image" src="./assets/img/resource/model3.png">
+                        
+                        <p>Result</p>
+                        <p>
+                            For characterization, we achieved 98.01% accuracy in the model with 512 dimension of hidden layer. Coupled with 
+                            the particle swarm optimization (PSO) algorithm, the sequence converges to 50 amino acids in 19.1 seconds in a test 
+                            task aimed at finding the longest peptide in the hidden layer space.
+                        </p>
+                        <p>
+                            However, the accuracy of the peptide interaction classification model (VAL_ACC) on the test data set was only 52.2%, 
+                            which was close to the random classification result (50.0%). After 2 months of work, we still could not solve the problem 
+                            of extremely low accuracy. That led us to move on to the development of the 2nd prototype version.
+                        </p>
+                    </div>
+                    <h3 class="pageContent-main__title">
+                        Prototype version 2 - Geometric-CNN based
+                    </h3>
+                    <div class="pageContent-main__textBox">
+                        <p>
+                            2021.7-2021.8
+                        </p>
+                        <p>
+                            For the reasons for the unsuccessful use of long-head attention-ResNet learning Contact Map pairing information 
+                            with peptide in the first version of the model, we analyzed the information revealed by contact map to characterize 
+                            the characteristics of external interactions in the target protein well, and only to represent internal folding information. 
+                            Therefore, after referring to the <a href="https://github.com/LPDI-EPFL/masif">MaSIF</a> model developed by P. Gainza et al., 
+                            we used the Surface Map with target proteins of chemical and Surface topological topographic structure to replace the Contact Map.
+                        </p>
+                        <p>
+                            Proteins can be thought of as a flow pattern consisting of a cloud-point graph consisting of "dots" on the protein surface with 
+                            spatial and chemical information. In prototype version 1, we ignore the spatial structure of the flow pattern and compress it 
+                            into 2d images for visual learning, which is also the problem of low accuracy caused by information fragmentation. By extending 
+                            CNN from plane to geometric surface and adding chemical information conducive to interaction identification, 0.99 AUC-ROC was 
+                            achieved in MaSIF's predicted PPI complex. We believe that this feature can also be applied to prediction of peptide-protein affinity
+                        </p>
+                        <p>
+                            Therefore, we used MaSIF to calculate the protein surface mesh, including 3D coordinates, tangents, and output the free charge, 
+                            hydrogen bond, and hydrophobicity of each small point. We plan to design mesh within a small patch of protein surface and develop 
+                            geometric convolutional networks for binding classification. After observing the distribution of points around the centroid of peptide 
+                            amino acids in each peptide-protein complex, we took A point set within 2.5-6.0 A.
+                        </p>
+                        <img class="image" src="./assets/img/resource/model4.png">
+                        <p>
+                            We conceived the idea that we could completely scan the protein surface based on geometric convolution to get all the possible 
+                            single amino acid binding regions, and the centroid positions of all the potential amino acids binding. In fact, it was discovered 
+                            in September that this method is called "RifGen", and the scanned binding amino acid field is called "Rotamer Interaction Field (RIF)". 
+                            What we have developed is a coarse-grained calculation method based on deep learning.
+                        </p>
+                        <p>
+                            However, it is still necessary to search the shortest connected conformation on the basis of RIF for the docking conformation of 
+                            all peptides. We designed monte Carlo tree search to capture the best docking conformation:
+                        </p>
+                        <img class="image" src="./assets/img/resource/model5.png">
+                        <p>Result</p>
+                        <p>
+                            We completed the feature extraction of all non-redundant targets in Pepbdb in mid-August, yielding 6,817 mesh files. 
+                            The corresponding Peptide characterization vector dataset was also prepared.
+                        </p>
+                        <p>
+                            However, with the release of source code of AlphaFold, we abandoned the model version2, and began the development of 
+                            peptide drug design models using AlphaFold.
+                        </p>
+                        <h3 class="pageContent-main__title">
+                            Prototype version 3 - AlphaFold powered
+                        </h3>
+                        <div class="pageContent-main__textBox">
+                            <p>
+                                2021.9-2021.10
+                            </p>
+                            <p>
+                                Methods is displayed in Report, click hyperlink below to visit it!
+                            </p>
+                            <p>
+                                <a href="https://arxiv.idec.io/article/000004/">Report</a>
+                            </p>
+                            <p>
+                                Result is displayed in Supplementary, click hyperlink below to visit it!
+                            </p>
+                            <p>
+                                <a href="https://arxiv.idec.io/pdf/a000004.01.pdf">Supplementary</a>
+                            </p>
+                        </div>
+                        <h3 class="pageContent-main__title">
+                            Drug-Likeness Evaluation Module
+                        </h3>
+                        <div class="pageContent-main__textBox">
+                            <p>
+                                2021.8-2021.10
+                            </p>
+                            <p>
+                                For most peptide drug companies, this module is often used for in-house development and is not open to the public. 
+                                Published peptide property predictors also tend to have less function in molecular property prediction and cannot 
+                                play the role of drug screening. 
+                            </p>
+                            <p>
+                                We don't need to develop multi-target peptide molecular property predictors, we just need to use key attributes to 
+                                distinguish between peptide molecules and their potential, similar to the Lipinski Five Rules, but at the same time 
+                                we need to be able to quantify. 
+                            </p>
+                            <p>
+                                By G. Richard Bickerton et al. work on the quantification of drug-like properties, and we have developed a number of 
+                                properties that are defined as peptide drug properties (Quantitative Estimates of Drug-Likeness, QEPD). We didn't 
+                                directly develop a pharmacogenic diclassifier because we thought that deep learning was difficult to interpret in 
+                                abstract assessments and convince drug chemists, so we aggregated the results of predictive molecular properties as a quantitative basis. 
+                            </p>   
+                            <p>
+                                We use a mixture of conventional and deep learning algorithms to evaluate the following properties:
+                            </p>
+                            <p>
+                                · Molecular weight
+                            </p>
+                            <p>
+                                · Number of hydrogen bond donors
+                            </p>
+                            <p>
+                                · Number of hydrogen bond receptors
+                            </p>
+                            <p>
+                                · Molecular polar surface area
+                            </p>
+                            <p>
+                                · Water solubility
+                            </p>
+                            <p>
+                                · Half-life
+                            </p>
+                            <p>
+                                We counted all FDA-approved peptide drugs and our randomly generated sequence at 5-50 amino acid lengths for the 
+                                above properties, and performed a master ingredient analysis (PCA) to obtain the following results:
+                            </p>
+                            <img class="image" src="./assets/img/resource/model6.png">
+                            <p style="width: 80%;text-align:center;font-size: .9rem; margin: -1rem auto 1rem auto; color: rgb(44, 209, 15);">Figure 2. PCA visualization results for 6 properties of the class 9 drug-type evaluator</p>
+                            <p>
+                                For different properties, the distribution varies greatly, so we count the distribution probability and 
+                                normalize it with the following changes:
+                            </p>
+                            <img class="image" src="./assets/img/resource/model7.png">
+                            <p>
+                                Compare the probability position of the current molecule in the distribution of pharmaceutical peptide properties, 
+                                and get a normalization score by integrating. For different properties, we refer to QED's calculation method for 
+                                the following summary:
+                            </p>
+                            <img class="image" src="./assets/img/resource/model8.png">
+                            <p>
+                                Among them are the weights between the different properties, which have not been determined because the model 
+                                has not yet been developed. The higher the QEP score that is eventually distributed between them, the higher 
+                                the can be considered a peptide drug. 
+                            </p>
+                            <p>
+                                The develop work is still in progress. In the future, we plan to achieve membrane-penetrating prediction, simple toxic rational prediction, etc. 
+                            </p>
+                        </div>
+                        <h2 class="pageContent-main__title">
+                            Reference
+                        </h2>
+                        <div class="pageContent-main__textBox">
+                            <p>
+                                [1].Weng, Gaoqi, et al. "Comprehensive evaluation of fourteen docking programs on protein–peptide complexes." Journal of chemical theory and computation 16.6 (2020): 3959-3969.
+                            </p>
+                            <p>
+                                [2].Chen, Lifan, et al. "TransformerCPI: improving compound–protein interaction prediction by sequence-based deep learning with self-attention mechanism and label reversal experiments." Bioinformatics 36.16 (2020): 4406-4414.
+                            </p>
+                            <p>
+                                [3].Bickerton, G. Richard, et al. "Quantifying the chemical beauty of drugs." Nature chemistry 4.2 (2012): 90-98.
+                            </p>
+                        </div>
+                        <h2 class="pageContent-main__title">
+                            Source Code
+                        </h2>
+                        <div class="pageContent-main__textBox">
+                            <p>
+                                Peplib Generator is still under development, source code will be available in <a href="https://github.com/Peldom/Peplib_Generator/">GitHub</a> in the future. 
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="pageContent-side" style="padding-top: 4rem;">
@@ -129,32 +381,28 @@
             })
             function createTOC(elementId){
              
-             let titles = document.getElementById(elementId).getElementsByClassName('pageContent-main__title')
-             let toc_list = document.getElementById('toclist')
-             while (toc_list.firstChild) {
-                let oldNode = toc_list.removeChild(toc_list.firstChild);
-                oldNode = null;
-             }
-             for(let i in titles){
-               let text = titles[i].textContent.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');  
-               if(titles[i].className!='pageContent-main__title'){
-                   text="　　"+text;
-               }
-               titles[i].id=text
-               if(!!text){
-                 console.log(text)
-                 let toc_item = document.createElement('div')
-                 toc_item.setAttribute('class', 'toclist__item')
-                 let link = document.createElement('a')
-                 link.href="#"+text
-                 let t = document.createTextNode(text)
-                 link.appendChild(t)
-                 toc_item.appendChild(link)
-                 toc_list.appendChild(toc_item)
-               }
-             }
-           }
+              let titles = document.getElementById(elementId).getElementsByClassName('pageContent-main__title')
+              let toc_list = document.getElementById('toclist')
+              while (toc_list.firstChild) {
+                 let oldNode = toc_list.removeChild(toc_list.firstChild);
+                 oldNode = null;
+              }
+              for(let i in titles){
+                let text = titles[i].textContent.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');   
+                titles[i].id=text
+                if(!!text){
+                  console.log(text)
+                  let toc_item = document.createElement('div')
+                  toc_item.setAttribute('class', 'toclist__item')
+                  let link = document.createElement('a')
+                  link.href="#"+text
+                  let t = document.createTextNode(text)
+                  link.appendChild(t)
+                  toc_item.appendChild(link)
+                  toc_list.appendChild(toc_item)
+                }
+              }
+            }
         </script>
     </body>
 </html>
-
