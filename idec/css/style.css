@@ -395,3 +395,19 @@ body {
   left: 40%; 
   position:absolute;
 }
+
+
+
+.textbox_center{
+  position: absolute;
+  /* background-color: black; */
+  line-height: 0.5;
+  height:50px;
+  width:600px;
+  top:30%;
+  left:30%;
+}
+
+.cent{
+  text-align: center;
+}

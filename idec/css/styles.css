@@ -11611,3 +11611,11 @@ header.masthead .masthead-heading {
 a:link,a:visited{
   text-decoration: none;
 }
+
+h4{
+  color: black;
+}
+
+p{
+  color:black;  
+}
